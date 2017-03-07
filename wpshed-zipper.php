@@ -35,6 +35,7 @@ function wpshed_zip_generator() {
 	if ( ! $theme_sass ) {
 		$exclude_directories[] = 'sass';
 		$exclude_files[] = 'style.scss';
+		$exclude_files[] = 'genericons.scss';
 		$exclude_files[] = 'editor-style.scss';
 	}
 

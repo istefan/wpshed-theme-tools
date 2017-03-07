@@ -181,6 +181,9 @@ function wpshed_exclude_files() {
 		'..',
 		'.jscsrc',
 		'.jshintignore',
+		'editor-style.css.map',
+		'genericons.css.map',
+		'style.css.map',
 	);
 
     return $exclude_files;
