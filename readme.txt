@@ -1,4 +1,13 @@
-# wpshed-theme-tools
+=== Plugin Name ===
+Contributors: istefan-1
+Donate link: https://wpshed.com/
+Tags: developer
+Requires at least: 4.6
+Tested up to: 4.7
+Stable tag: 1.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
 This is a developer tool that creates a clean ZIP file of a theme.
 
 == Description ==

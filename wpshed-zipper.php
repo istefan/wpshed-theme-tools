@@ -51,9 +51,6 @@ function wpshed_zip_generator() {
 
 		$local_filename = str_replace( trailingslashit( $prototype_dir ), '', $filename );
 
-		if ( 'languages/_w.pot' == $local_filename )
-			$local_filename = sprintf( 'languages/%s.pot', $theme_name );
-
 		$contents = file_get_contents( $filename );
 		$contents = apply_filters( 'wpshed_zip_generator_file_contents', $contents, $local_filename );
 		$zip->addFromString( trailingslashit( $theme_name ) . $local_filename, $contents );
@@ -66,4 +63,42 @@ function wpshed_zip_generator() {
 	readfile( $zip_filename );
 	unlink( $zip_filename );/**/
 	die();
+}
+
+/**
+ * Exclude Files.
+ */
+function wpshed_exclude_files() {
+
+	$exclude_files = array( 
+		'.travis.yml', 
+		'codesniffer.ruleset.xml', 
+		'CONTRIBUTING.md', 
+		'README.md', 
+		'.git', 
+		'.svn', 
+		'.DS_Store', 
+		'.gitignore',
+		'customizer-examples.php', 
+		'.', 
+		'..',
+		'.jscsrc',
+		'.jshintignore',
+		'editor-style.css.map',
+		'genericons.css.map',
+		'style.css.map',
+	);
+
+    return $exclude_files;
+}
+
+
+/**
+ * Exclude Directories.
+ */
+function wpshed_exclude_directories() {
+
+	$exclude_directories = array( '.git', '.svn', '.', '..' );
+
+    return $exclude_directories;
 }
